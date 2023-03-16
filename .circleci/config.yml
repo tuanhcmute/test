@@ -9,10 +9,13 @@ jobs:
 
     steps:
       - checkout
-      - run: python -m venv venv
-      - run: source venv/bin/activate
+      # - run: python -m venv venv
+      # - run: source venv/bin/activate
+      - run: /usr/local/bin/python -m pip install --upgrade pip
       - run: 
-          command: pip install --user -r requirements.txt
+          command: |
+            echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
+            pip install --user -r requirements.txt
       - run: source .env
       - run: pytest
 
