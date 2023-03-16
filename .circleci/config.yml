@@ -9,9 +9,9 @@ jobs:
     steps:
       - checkout
       - run: python -m venv venv
-      - run: .venv/bin/activate
+      - run: venv/bin/activate
       - run: 
-          command: /usr/local/bin/python -m pip install -r requirements.txt
+          command: pip install -r requirements.txt
           name: Install Deps
       - run: source .env
       - run: pytest
