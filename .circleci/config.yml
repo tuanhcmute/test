@@ -9,7 +9,9 @@ jobs:
       - checkout
       - run: virtualenv ./venv
       - run: source venv/bin/activate
-      - run: RUN pip install -r requirements.txt
+      - run: 
+          command: pip install -r requirements.txt
+          name: Install Deps
       - run: source .env
       - run: pytest
 
