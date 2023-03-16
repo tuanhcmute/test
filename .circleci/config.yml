@@ -13,7 +13,7 @@ jobs:
       - run: 
           command: |
             echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
-            pip install --user -r requirements.txt
+            python pip install --user -r requirements.txt
       - run: source .env
       - run: pytest
 
