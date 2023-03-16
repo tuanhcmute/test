@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run: virtualenv ./venv
-      - run: source ./venv/Scripts/active
+      - run: source venv/bin/activate
       - run: pip install -r requirements.txt
       - run: source .env
       - run: pytest
